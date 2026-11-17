@@ -37,13 +37,19 @@ public class Main {
             if (asset instanceof House) {
                 System.out.println(
                         "House (" + asset.getDescription() + ")" +
-                                "\nAddress: " + ((House) asset).getAddress()
+                                "\nAcquired date: " + asset.getDateAcquired() +
+                                "\nPaid: " + asset.getOriginalCost() +
+                                "\nAddress: " + ((House) asset).getAddress() +
+                                "\nCurrent value: " + asset.getValue()
                 );
             } else if (asset instanceof Vehicle) {
                 System.out.println(
                         "Vehicle (" + asset.getDescription() + ")" +
+                                "\nAcquired date: " + asset.getDateAcquired() +
+                                "\nPaid: " + asset.getOriginalCost() +
                                 "\nMake / Model: " + ((Vehicle) asset).getMakeModel() +
-                                "\nYear: " + ((Vehicle) asset).getYear()
+                                "\nYear: " + ((Vehicle) asset).getYear() +
+                                "\nCurrent value: " + asset.getValue()
                 );
             }
             System.out.println();
