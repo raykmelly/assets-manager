@@ -1,6 +1,7 @@
 package com.pluralsight;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class House extends Asset{
     // Properties
@@ -38,7 +39,7 @@ public class House extends Asset{
         // Calculate lot value (0.25 * lotSize)
         BigDecimal lotValue = new BigDecimal("0.25").multiply(BigDecimal.valueOf(lotSize));
         // Add them together to get the total house value
-        return houseValue.add(lotValue);
+        return houseValue.add(lotValue).setScale(2, RoundingMode.HALF_UP);
     }
 
     // Getters & setters

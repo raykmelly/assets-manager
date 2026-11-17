@@ -2,6 +2,7 @@ package com.pluralsight;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.time.LocalDate;
 import java.time.Year;
 import java.util.HashMap;
 import java.util.List;
@@ -28,7 +29,7 @@ public class Vehicle extends Asset {
         BigDecimal value;
 
         // Cars age from the current year
-        int age = Year.now().getValue() - year;
+        int age = LocalDate.now().getYear() - year;
 
         if (age <= 3) {
             // 3% off
