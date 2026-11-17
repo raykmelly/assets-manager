@@ -45,8 +45,9 @@ public class Vehicle extends Asset {
             // Set the cars value to just $1,000
             value = new BigDecimal("1000.00");
         } else {
-            // Subtract the deduction from the vehicles value
-            BigDecimal deduction = cost.multiply(deductionPercent);
+            // Subtract the deduction from the vehicles value.
+            // Reduced PER year, so age is accounted for.
+            BigDecimal deduction = cost.multiply(deductionPercent).multiply(BigDecimal.valueOf(age));
             value = cost.subtract(deduction);
         }
 
